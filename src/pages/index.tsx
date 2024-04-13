@@ -17,37 +17,37 @@ export default function Home(): JSX.Element {
     defaultTemperatureData
   );
 
-  //   useEffect(() => {
-  //     fetch(
-  //       "https://us-west-2.aws.data.mongodb-api.com/app/data-vgwek/endpoint/latest"
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setTemperatureData({
-  //           temperatureInside: data.temperatureInside,
-  //           temperatureOutside: data.temperatureOutside,
-  //           timestampMs: data.timestampMs,
-  //         });
-  //       });
+  useEffect(() => {
+    fetch(
+      "https://us-west-2.aws.data.mongodb-api.com/app/data-vgwek/endpoint/latest"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setTemperatureData({
+          temperatureInside: data.temperatureInside,
+          temperatureOutside: data.temperatureOutside,
+          timestampMs: data.timestampMs,
+        });
+      });
 
-  //     const pusher = new Pusher(siteConfig.customFields.pusherKey as string, {
-  //       cluster: siteConfig.customFields.pusherCluster as string,
-  //     });
+    const pusher = new Pusher(siteConfig.customFields.pusherKey as string, {
+      cluster: siteConfig.customFields.pusherCluster as string,
+    });
 
-  //     const channel = pusher.subscribe("temperature");
-  //     channel.bind("sauna/temperature", function (data) {
-  //       setTemperatureData({
-  //         temperatureInside: data.temperatureInside,
-  //         temperatureOutside: data.temperatureOutside,
-  //         timestampMs: data.timestampMs,
-  //       });
-  //     });
+    const channel = pusher.subscribe("temperature");
+    channel.bind("sauna/temperature", function (data) {
+      setTemperatureData({
+        temperatureInside: data.temperatureInside,
+        temperatureOutside: data.temperatureOutside,
+        timestampMs: data.timestampMs,
+      });
+    });
 
-  //     return () => {
-  //       // cleanup
-  //       pusher.disconnect();
-  //     };
-  //   }, []);
+    return () => {
+      // cleanup
+      pusher.disconnect();
+    };
+  }, []);
 
   const { gradientFrom, gradientTo, sentimentImage } =
     getStylingForCurrentTemperature(temperatureData.temperatureInside);
