@@ -1,7 +1,18 @@
 .infoGraphicCluster {
   display: flex;
   flex-direction: row;
-  width: 100vw;
   align-items: flex-start;
-  justify-content: center;
+}
+
+.sentimentImage {
+}
+
+.sentimentImage img {
+  width: 1000px;
+  height: 1000px;
+}
+
+.loading {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 300px;
 }

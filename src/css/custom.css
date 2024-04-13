@@ -29,10 +29,16 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.page-layout {
+.full-page-wrapper {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  padding: 200px;
 }
