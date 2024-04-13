@@ -1,0 +1,7 @@
+.infoGraphicCluster {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: flex-start;
+  justify-content: center;
+}
