@@ -1,9 +1,14 @@
 .wrapper {
-  position: absolute;
   padding-top: 140px;
   flex-direction: row;
   align-items: center;
   font-family: "Reenie Beanie", cursive;
+}
+
+@media screen and (min-width: 996px) {
+  .wrapper {
+    position: absolute;
+  }
 }
 
 .temperatureLabel {

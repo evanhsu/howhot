@@ -3,13 +3,18 @@
   flex-direction: row;
   align-items: flex-start;
 }
+@media screen and (max-width: 997px) {
+  .infoGraphicCluster {
+    flex-direction: column !important;
+  }
+}
 
 .sentimentImage {
 }
 
 .sentimentImage img {
   width: 1000px;
-  height: 1000px;
+  /* height: 1000px; */
 }
 
 .loading {
