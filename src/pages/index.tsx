@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
         setTemperatureData({
           temperatureInside: data.temperatureInside,
           temperatureOutside: data.temperatureOutside,
-          timestampMs: data.timestampMs,
+          timestamp: data.timestamp,
         });
       });
 
@@ -40,7 +40,7 @@ export default function Home(): JSX.Element {
       setTemperatureData({
         temperatureInside: data.temperatureInside,
         temperatureOutside: data.temperatureOutside,
-        timestampMs: data.timestampMs,
+        timestamp: data.timestamp,
       });
     });
 

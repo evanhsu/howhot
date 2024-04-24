@@ -45,8 +45,8 @@ export const getStylingForCurrentTemperature = (temperature: number) => {
 export const defaultTemperatureData = {
   temperatureInside: 0.0,
   temperatureOutside: 0.0,
-  timestampMs: 0,
-  //   phase: 'OFF',
+  timestamp: 0,
+  //   phase: "OFF",
 };
 
 export type TemperatureData = typeof defaultTemperatureData;
